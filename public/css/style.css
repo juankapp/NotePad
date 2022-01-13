@@ -3,6 +3,7 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     background-color: rgb(125, 158, 144);
+    width: 100%;
 }
 
 
@@ -57,3 +58,62 @@ footer {
     justify-content: center;
     padding: 25px 0px 60px 0px;
 }
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 5% 5% 5%;
+    flex-wrap: wrap;
+}
+
+.create {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-width: 2px;
+    padding: 5px;
+     border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.show {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-width: 2px;
+    padding: 5px;
+     border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    color: brown;
+}
+
+
+
+.notas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5% 5% 5% 5%;
+}
+
+.card {
+    margin: 5px;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+}
+

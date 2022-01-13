@@ -28,7 +28,7 @@ class LoginController extends Controller
         );
 
         if(Auth::attempt($dados)) {
-            return redirect('/dados');
+            return redirect('/menu');
         } else {
             $erro = "dados invalidos";
             return view('login', ['erro' => $erro]);
@@ -59,6 +59,12 @@ class LoginController extends Controller
         $user->save();
 
         return redirect('/login');
+    }
+
+    public function deslogar() {
+        Auth::logout();
+
+       return redirect('/');
     }
 
 }

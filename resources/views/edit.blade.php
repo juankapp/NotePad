@@ -19,42 +19,30 @@
         <div>
             <h1>Bem vindo ao NotePad</h1>
         </div>
-        <div class="mt-3">
-
-            <a href="/cadastrar"><button type="button" class="btn btn-danger">Cadastrar-se</button> </a>
+        <input type="hidden">
         </div>
     </header>
 
     <div class="login">
         <div class="fazerlogin">
-            <form action="/login" method="POST">
-                <h1>Fazer Login</h1>
+            <form action="/nota/editar/{{$nota->id}}" method="POST">
                 @csrf
+                <h1>Edite sua Nota</h1>
                 <div class="form-group">
-                    <label for="email">Endereço de email</label>
-                    <input type="email" class="form-control mb-2" id="email" aria-describedby="emailHelp"
-                        placeholder="Seu email" name="email">
-                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com
-                        ninguém.</small>
+                    <label for="nome">Titulo</label>
+                    <input type="text" class="form-control mb-2" id="nome" aria-describedby="emailHelp"
+                        value="{{$nota->title}}" name="title" style="width: 400px">
                 </div>
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" class="form-control mb-2 " id="senha" placeholder="Senha" name='password'>
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label " for="exampleCheck1">Clique em mim</label>
-                </div>
-                <button type="submit" class="btn btn-primary mt-2">Enviar</button>
-                <a href="/cadastrar"><button type="button" class="btn btn-success mt-2">Cadastrar-se</button> </a>
-                <br><br>
-
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Anotação</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text">{{$nota->text}}</textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Editar</button> <br><br>
                 @if ($errors->any())
                     @foreach ($errors->all() as $error)
                         <div class="alert alert-danger" role="alert">{{ $error }}</div>
                     @endforeach
                 @endif
-
             </form>
 
         </div>
